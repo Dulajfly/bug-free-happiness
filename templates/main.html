@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dulajfly</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+    <div class="containter">
+        {% block content %}
+            {% if user.is_authenticated %}
+                <h1>Hi {{ user.username }}</h1>
+            {% else %}
+                <h1>Hi! {{ user.username }}</h1>
+            {% endif %}
+
+        {% endblock content %}
+    </div>
+
+</body>
+</html>
